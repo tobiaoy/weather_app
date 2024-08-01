@@ -1,0 +1,140 @@
+*, *::before, *::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.15rem;
+    font-family: 'Roboto';
+    font-weight: lighter;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weather-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    height: 100vh;
+}
+
+#search-group {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 2.25fr 1fr 1fr;
+    gap: 1.25rem;
+}
+
+#info-group {
+    /* margin-top: 5rem; */
+    display: grid;
+    grid-template-areas: 
+    "date date place place time time"
+    "tb tb tb tb tb tb"
+    "tb tb tb tb tb tb"
+    "tb tb tb tb tb tb"
+    "fl fl fl hl hl hl"
+    ;
+    gap: 1.75rem;
+}
+
+#forecast-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.95rem;
+    grid-template-rows: repeat(2, 1fr);
+    overflow: auto;
+    min-height: 7rem;
+}
+
+#temp-block {
+    grid-area: tb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 1.35rem;
+    background-color: #DCF2F1;
+    padding: 2.5rem;
+    border-radius: 1.5px;
+    font-weight: bolder;
+}
+
+#info-high-low {
+    grid-area: hl;
+    display: flex;
+    justify-content: end;
+}
+
+#info-feels-like {
+    grid-area: fl;
+}
+
+#info-time {
+    grid-area: time;
+    display: flex;
+    justify-content: end;
+}
+
+.forecast-icon {
+    height: 4rem;
+    width: 4rem;
+}
+
+#main-icon {
+    height: 8rem;
+    width: 8rem;
+}
+
+#search-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 2.5px;
+}
+
+#search-btn {
+    width: 12rem;
+    height: 2.5rem;
+    background-color: #3FA2F6;
+    color: white;
+    font-size: 0.9rem;
+    border-color: white;
+    border-radius: 5px;
+}
+
+#unit-system-btn {
+    width: 12rem;
+    height: 2.5rem;
+    background-color: #5A639C;
+    color: white;
+    font-size: 0.9rem;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.forecast-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-block-desc {
+    text-align: center;
+}
+
+#search-group > button:hover {
+    cursor: pointer;
+    border-color: gray;
+}
+
+footer {
+    margin: 1rem;
+    padding: 1rem;
+    height: 10rem;
+}
