@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-    // mode: 'development',
+    mode: 'production',
     entry: {
         main: path.resolve(__dirname, './src/app.js'),
       },
@@ -17,7 +17,7 @@ module.exports = {
       devServer: {
         static: [
             { directory: path.join(__dirname, 'deploy') },
-            { directory: path.join(__dirname, 'src') }
+            // { directory: path.join(__dirname, 'src') }
         ],
         port: 3000,
         open: true,
@@ -44,7 +44,7 @@ module.exports = {
 
             {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-                type: 'asset/resource', // Use Webpack 5 asset modules
+                type: 'asset/resource',
                 generator: {
                     filename: 'assets/[name][ext][query]', // Organize output files
                 },
@@ -58,7 +58,7 @@ module.exports = {
             template: path.resolve(__dirname, 'src/template.html')
         }),
 
-        // new CleanWebpackPlugin()
+        new CleanWebpackPlugin()
     ],
     
     resolve: {
