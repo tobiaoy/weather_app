@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'deploy'),
-        // clean: true
+        clean: true
       },
     
       devServer: {
@@ -46,7 +46,7 @@ module.exports = {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/[name][ext][query]', // Organize output files
+                    filename: 'assets/[name][ext][query]', 
                 },
             }
         ]
