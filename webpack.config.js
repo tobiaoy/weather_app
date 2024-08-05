@@ -3,8 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-    // mode: 'development',
-
+    mode: 'development',
     entry: {
         main: path.resolve(__dirname, './src/app.js'),
       },
@@ -12,17 +11,20 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'deploy'),
-        // clean: true
+        assetModuleFilename: '[name][ext]',
+        clean: true
       },
     
       devServer: {
         static: [
             { directory: path.join(__dirname, 'deploy') },
-            // { directory: path.join(__dirname, 'src') }
+            { directory: path.join(__dirname, 'src') },
+            { directory: path.join(__dirname, 'icons') }
         ],
         port: 3000,
         open: true,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     
     module: {
