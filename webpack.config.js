@@ -13,6 +13,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'deploy'),
         assetModuleFilename: '[name][ext]',
+        publicPath: '/weather_app/'
         // clean: true
       },
     
