@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require("path");
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'deploy'),
         assetModuleFilename: '[name][ext]',
-        clean: true
+        // clean: true
       },
     
       devServer: {
@@ -49,7 +50,7 @@ module.exports = {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'assets/[name][ext][query]', 
+                    filename: 'images/[name][hash][ext][query]',
                 },
             }
         ]
@@ -60,6 +61,12 @@ module.exports = {
             title: "Weather App",
             template: path.resolve(__dirname, 'src/template.html')
         }),
+
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: './icons', to: './icons'}
+            ]
+        })
 
         // new CleanWebpackPlugin()
     ],
