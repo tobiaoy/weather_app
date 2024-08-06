@@ -89,7 +89,7 @@ const makeForecastBlock = (dayData, symbol) => {
     // Create and configure the image element
     const blockIcon = document.createElement('img');
     blockIcon.classList.add('forecast-icon');
-    blockIcon.src = `../../icons/${dayData.icon}.svg`;  // Set the source of the image
+    blockIcon.src = `/weather_app/icons/${dayData.icon}.svg`;  // Set the source of the image
     blockIcon.alt = dayData.icon;  // Set alt text
 
     // Create and configure the hour paragraph

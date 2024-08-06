@@ -103,7 +103,7 @@ const setDom = () => {
             viewDesc.textContent = weatherValues.descData;
             viewFeelsLike.textContent = `Feels Like: ${weatherValues.feelslikeData}${getSymbol()}`;
             viewHighLow.textContent = `High: ${weatherValues.highData} ${getSymbol()} / Low: ${weatherValues.lowData} ${getSymbol()}`;
-            viewIcon.src = `../../icons/${weatherValues.iconData}.svg`
+            viewIcon.src = `/weather_app/icons/${weatherValues.iconData}.svg`
 
             // forecast group > make a function to create forecast blocks
             // need to go from the current time to the end of the day > a subset
